@@ -1,0 +1,243 @@
+[gd_scene load_steps=3 format=3 uid="uid://sj1e6prlpr8b"]
+
+[ext_resource type="Script" uid="uid://c751b4omjp2wc" path="res://scripts/settings.gd" id="1_5p8wc"]
+
+[sub_resource type="Theme" id="Theme_5p8wc"]
+default_font_size = 40
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_5p8wc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_bottom = 40.0
+theme = SubResource("Theme_5p8wc")
+
+[node name="top_tabs" type="HBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 44.0
+theme_override_constants/separation = 24
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="controls" type="Button" parent="CanvasLayer/Panel/top_tabs"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Controls"
+
+[node name="sound" type="Button" parent="CanvasLayer/Panel/top_tabs"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Sound"
+
+[node name="display" type="Button" parent="CanvasLayer/Panel/top_tabs"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Display"
+
+[node name="language" type="Button" parent="CanvasLayer/Panel/top_tabs"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Language"
+
+[node name="control_menu" type="VBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 460.0
+offset_top = 180.0
+offset_right = 1460.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 28
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/control_menu"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel/control_menu/HBoxContainer"]
+layout_mode = 2
+text = "Controller"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/control_menu/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "Keyboard"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/control_menu"]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/control_menu/VBoxContainer"]
+layout_mode = 2
+text = "Look Sensitivity"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/Panel/control_menu/VBoxContainer"]
+layout_mode = 2
+value = 50.0
+
+[node name="sound_menu" type="VBoxContainer" parent="CanvasLayer/Panel"]
+visible = false
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 460.0
+offset_top = 152.5
+offset_right = 1460.0
+offset_bottom = 1167.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 28
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/sound_menu"]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/sound_menu/VBoxContainer"]
+layout_mode = 2
+text = "Music"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="music" type="HSlider" parent="CanvasLayer/Panel/sound_menu/VBoxContainer"]
+layout_mode = 2
+step = 10.0
+value = 100.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Panel/sound_menu"]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/sound_menu/VBoxContainer2"]
+layout_mode = 2
+text = "Sound Effects"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="sfx" type="HSlider" parent="CanvasLayer/Panel/sound_menu/VBoxContainer2"]
+layout_mode = 2
+step = 10.0
+value = 100.0
+
+[node name="display_menu" type="VBoxContainer" parent="CanvasLayer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 460.0
+offset_top = 180.0
+offset_right = 1460.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 28
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/display_menu"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="resolution" type="Button" parent="CanvasLayer/Panel/display_menu/HBoxContainer"]
+layout_mode = 2
+text = "Resolution"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/display_menu/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "1920 x 1080"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Panel/display_menu"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="fullscreen" type="Button" parent="CanvasLayer/Panel/display_menu/HBoxContainer2"]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="fullscreen_label" type="RichTextLabel" parent="CanvasLayer/Panel/display_menu/HBoxContainer2"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "On"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/Panel/display_menu"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="vsync" type="Button" parent="CanvasLayer/Panel/display_menu/HBoxContainer3"]
+layout_mode = 2
+text = "V-Sync"
+
+[node name="vsync_label" type="RichTextLabel" parent="CanvasLayer/Panel/display_menu/HBoxContainer3"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "On"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="language_menu" type="VBoxContainer" parent="CanvasLayer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 460.0
+offset_top = 180.0
+offset_right = 1460.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 28
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel/language_menu"]
+layout_mode = 2
+text = "English"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Panel/language_menu"]
+layout_mode = 2
+text = "Spanish"
+
+[node name="Button3" type="Button" parent="CanvasLayer/Panel/language_menu"]
+layout_mode = 2
+text = "Irish"
+
+[node name="Button4" type="Button" parent="CanvasLayer/Panel/language_menu"]
+layout_mode = 2
+text = "French"
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="CanvasLayer/Panel/top_tabs/controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/top_tabs/sound" to="." method="_on_sound_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/top_tabs/display" to="." method="_on_display_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/top_tabs/language" to="." method="_on_language_pressed"]
+[connection signal="changed" from="CanvasLayer/Panel/sound_menu/VBoxContainer/music" to="." method="_on_music_changed"]
+[connection signal="drag_ended" from="CanvasLayer/Panel/sound_menu/VBoxContainer/music" to="." method="_on_music_drag_ended"]
+[connection signal="value_changed" from="CanvasLayer/Panel/sound_menu/VBoxContainer/music" to="." method="_on_music_value_changed"]
+[connection signal="changed" from="CanvasLayer/Panel/sound_menu/VBoxContainer2/sfx" to="." method="_on_sfx_changed"]
+[connection signal="value_changed" from="CanvasLayer/Panel/sound_menu/VBoxContainer2/sfx" to="." method="_on_sfx_value_changed"]
+[connection signal="pressed" from="CanvasLayer/Panel/display_menu/HBoxContainer/resolution" to="." method="_on_resolution_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/display_menu/HBoxContainer2/fullscreen" to="." method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/display_menu/HBoxContainer3/vsync" to="." method="_on_vsync_pressed"]

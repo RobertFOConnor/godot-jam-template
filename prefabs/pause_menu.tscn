@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcscdnjmhkjhd"]
+
+[ext_resource type="Script" uid="uid://ditfrdpa113oi" path="res://scripts/pause_menu.gd" id="1_hf53u"]
+[ext_resource type="PackedScene" uid="uid://sj1e6prlpr8b" path="res://scenes/settings.tscn" id="2_iyb4f"]
+
+[sub_resource type="Theme" id="Theme_8vm25"]
+default_font_size = 28
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_hf53u")
+
+[node name="settings" parent="." instance=ExtResource("2_iyb4f")]
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = SubResource("Theme_8vm25")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -68.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="resume" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="restart" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="settings" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="exittomenu" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Exit To Menu"
+
+[node name="exitgame" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Exit Game"
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="Panel/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/exittomenu" to="." method="_on_exittomenu_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/exitgame" to="." method="_on_exitgame_pressed"]
