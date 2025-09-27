@@ -8,7 +8,7 @@ var sfxLevel = 100
 func _ready():
 	add_child(player)
 
-var sound = load("res://sfx/click.wav")
+var sound = load("res://sound/sfx/click.wav")
 func click():
 	player.stream = sound
 	player.volume_db = getSFXLevel()

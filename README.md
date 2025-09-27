@@ -21,7 +21,3 @@ It comes with common essentials already set up so you can focus on making the ga
   - Resume
   - Settings (in-game)
   - Quit to Main Menu
-
----
-
-## Structure
