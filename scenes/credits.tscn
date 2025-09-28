@@ -1,8 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://brtwrtsqbkk3i"]
+[gd_scene load_steps=5 format=3 uid="uid://brtwrtsqbkk3i"]
 
 [ext_resource type="Script" uid="uid://djwet7lwcenty" path="res://scripts/credits.gd" id="1_0bpdh"]
+[ext_resource type="Texture2D" uid="uid://blp7ebv832lnp" path="res://textures/black.png" id="2_2ckv8"]
 
 [sub_resource type="Theme" id="Theme_yeqti"]
+
+[sub_resource type="Theme" id="Theme_0bpdh"]
+default_font_size = 26
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_0bpdh")
@@ -14,23 +18,97 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 theme = SubResource("Theme_yeqti")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_2ckv8")
+expand_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_0bpdh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/Control"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -960.0
-offset_top = -135.0
-offset_right = 960.0
-offset_bottom = 135.0
+offset_left = -20.0
+offset_top = 385.0
+offset_right = 1900.0
+offset_bottom = 655.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 32
-text = "Created by:"
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Created by"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/Panel/Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Jimmy jim jim"
 fit_content = true
-scroll_active = false
-horizontal_alignment = 1
+horizontal_alignment = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Panel/Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/Control/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Created by"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/Panel/Control/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Jimmy jim jim"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/Panel/Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/Control/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Created by"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/Panel/Control/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Jimmy jim jim"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/Panel/Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/Control/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Created by"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/Panel/Control/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Jimmy jim jim"
+fit_content = true
+horizontal_alignment = 2
