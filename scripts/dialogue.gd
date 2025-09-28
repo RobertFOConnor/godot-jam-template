@@ -1,7 +1,7 @@
 extends Node
 
 @onready var subtitle_label: RichTextLabel = $subtitle
-@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var audio_player: AudioStreamPlayer2D = $"../Audio/VoiceAudioStreamPlayer2D"
 
 var subtitles = []  # Array of {time: float, text: String}
 var current_index = 0

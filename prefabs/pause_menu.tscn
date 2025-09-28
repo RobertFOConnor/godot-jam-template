@@ -7,6 +7,7 @@
 default_font_size = 28
 
 [node name="PauseMenu" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_hf53u")
 
 [node name="settings" parent="." instance=ExtResource("2_iyb4f")]
