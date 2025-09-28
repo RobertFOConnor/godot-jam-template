@@ -132,6 +132,22 @@ layout_mode = 2
 step = 10.0
 value = 100.0
 
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/sound_menu"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="subtitles" type="Button" parent="CanvasLayer/Panel/sound_menu/HBoxContainer"]
+layout_mode = 2
+text = "Subtitles"
+
+[node name="subtitles_label" type="RichTextLabel" parent="CanvasLayer/Panel/sound_menu/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "ON"
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="display_menu" type="VBoxContainer" parent="CanvasLayer/Panel"]
 visible = false
 layout_mode = 1
@@ -238,6 +254,7 @@ text = "French"
 [connection signal="value_changed" from="CanvasLayer/Panel/sound_menu/VBoxContainer/music" to="." method="_on_music_value_changed"]
 [connection signal="changed" from="CanvasLayer/Panel/sound_menu/VBoxContainer2/sfx" to="." method="_on_sfx_changed"]
 [connection signal="value_changed" from="CanvasLayer/Panel/sound_menu/VBoxContainer2/sfx" to="." method="_on_sfx_value_changed"]
+[connection signal="pressed" from="CanvasLayer/Panel/sound_menu/HBoxContainer/subtitles" to="." method="_on_subtitles_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/display_menu/HBoxContainer/resolution" to="." method="_on_resolution_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/display_menu/HBoxContainer2/fullscreen" to="." method="_on_fullscreen_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/display_menu/HBoxContainer3/vsync" to="." method="_on_vsync_pressed"]

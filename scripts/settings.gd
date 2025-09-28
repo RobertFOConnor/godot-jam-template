@@ -9,8 +9,11 @@ extends Node2D
 @onready var fullscreen_label: RichTextLabel = $CanvasLayer/Panel/display_menu/HBoxContainer2/fullscreen_label
 @onready var vsync_label: RichTextLabel = $CanvasLayer/Panel/display_menu/HBoxContainer3/vsync_label
 
+# Audio Settings
 @onready var music: HSlider = $CanvasLayer/Panel/sound_menu/VBoxContainer/music
 @onready var sfx: HSlider = $CanvasLayer/Panel/sound_menu/VBoxContainer2/sfx
+@onready var subtitles_label: RichTextLabel = $CanvasLayer/Panel/sound_menu/HBoxContainer/subtitles_label
+
 
 signal music_level_change(value)
 
@@ -24,6 +27,8 @@ func _on_ready() -> void:
 	
 	music.value = GameSettings.musicLevel
 	sfx.value = GameSettings.sfxLevel
+	
+	subtitles_label.text = "ON" if GameSettings.showSubtitles else "OFF"
 	
 	var vsync_mode = DisplayServer.window_get_vsync_mode()
 	if vsync_mode == DisplayServer.VSYNC_ENABLED:
@@ -110,3 +115,7 @@ func updateVsyncLabel():
 	else:
 		vsync_label.text = "ON"
 		toggle_vsync(true)
+
+func _on_subtitles_pressed() -> void:
+	GameSettings.showSubtitles = !GameSettings.showSubtitles
+	subtitles_label.text = "ON" if GameSettings.showSubtitles else "OFF"

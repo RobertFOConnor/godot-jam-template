@@ -7,8 +7,13 @@ var subtitles = []  # Array of {time: float, text: String}
 var current_index = 0
 
 func _ready():
-	load_subtitles("res://sound/voice/test.txt")
+	playVoiceLine("test")
+
+func playVoiceLine(fileName):
+	audio_player.stream = load("res://sound/voice/"+fileName+".ogg")
 	audio_player.play()
+	if GameSettings.showSubtitles:
+		load_subtitles("res://sound/voice/"+fileName+".txt")
 
 func load_subtitles(path: String):
 	var file = FileAccess.open(path, FileAccess.READ)
@@ -24,6 +29,16 @@ func load_subtitles(path: String):
 	file.close()
 
 func _process(_delta):
+	if GameManager.isPaused:
+		audio_player.stream_paused = true
+	
+	if audio_player.stream_paused && !GameManager.isPaused:
+		audio_player.stream_paused = false
+	
+	if !GameSettings.showSubtitles: 
+		subtitle_label.text = ""
+		return
+
 	if audio_player.playing and current_index < subtitles.size():
 		var t = audio_player.get_playback_position()
 		var next_sub = subtitles[current_index]
@@ -31,5 +46,5 @@ func _process(_delta):
 			subtitle_label.text = next_sub["text"]
 			current_index += 1
 			
-	if !audio_player.playing:
+	if !audio_player.playing && !audio_player.stream_paused:
 		subtitle_label.text = ""

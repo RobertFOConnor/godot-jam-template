@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://tdtp0oc5bsrd"]
+[gd_scene load_steps=15 format=3 uid="uid://tdtp0oc5bsrd"]
 
+[ext_resource type="Script" uid="uid://ij3pjjjn8x2s" path="res://scripts/game_manager.gd" id="1_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://dcscdnjmhkjhd" path="res://prefabs/pause_menu.tscn" id="1_uwrxv"]
 [ext_resource type="Shader" uid="uid://di2fu5f7ieiaf" path="res://Outline.gdshader" id="2_yqjtg"]
 [ext_resource type="Script" uid="uid://3svy5ltsisk1" path="res://scripts/game_audio.gd" id="3_lbhrr"]
@@ -60,7 +61,8 @@ _data = {
 &"test": SubResource("Animation_yqjtg")
 }
 
-[node name="Node3D" type="Node3D"]
+[node name="Game" type="Node3D"]
+script = ExtResource("1_u5sy4")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1860516, 2.9590564, 0)

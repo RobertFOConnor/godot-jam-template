@@ -4,6 +4,7 @@ extends Node
 
 var musicLevel = 100
 var sfxLevel = 100
+var showSubtitles = true
 
 func _ready():
 	add_child(player)
@@ -13,6 +14,7 @@ func click():
 	player.stream = sound
 	player.volume_db = getSFXLevel()
 	player.play()
+
 
 func getSFXLevel():
 	sfxLevel = clamp(sfxLevel, 0, 100)
