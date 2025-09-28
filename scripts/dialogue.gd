@@ -29,12 +29,6 @@ func load_subtitles(path: String):
 	file.close()
 
 func _process(_delta):
-	if GameManager.isPaused:
-		audio_player.stream_paused = true
-	
-	if audio_player.stream_paused && !GameManager.isPaused:
-		audio_player.stream_paused = false
-	
 	if !GameSettings.showSubtitles: 
 		subtitle_label.text = ""
 		return
