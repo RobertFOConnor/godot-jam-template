@@ -21,3 +21,14 @@ It comes with common essentials already set up so you can focus on making the ga
   - Resume
   - Settings (in-game)
   - Quit to Main Menu
+
+## Subtitles with Audacity Labels
+
+You can use **Audacity** to create subtitles/timing data for dialogue lines:
+
+1. Open your audio file in Audacity.  
+2. Press `Ctrl+B` (or `⌘B` on Mac) to insert a **label track** and mark subtitle start points.  
+3. Type the text of each subtitle in the labels.  
+4. When finished, go to **File → Export → Export Labels…**  
+   - Save the `.txt` file in the **same directory** as the audio file.  
+   - Use the **same base filename** as the audio (e.g. `voice.ogg` → `voice.txt`).  
